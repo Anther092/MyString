@@ -65,6 +65,7 @@ char& MyStringData::operator[](size_t idx) {
 }
 
 const char *MyStringData::getCString() const {
+    //add null terminant
     return (_stringType == stringType::longString) ? _udata.l.data : _udata.s.data;
 }
 

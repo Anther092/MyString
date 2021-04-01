@@ -118,6 +118,21 @@ MyString &MyString::operator+(const MyString &appendedString) {
 }
 
 unsigned int MyString::find(const MyString &substring, unsigned int pos) {
+
+    for (int i = 0; i <= size() - substring.size(); ++i) {
+        for (int j = 0; j < substring.size(); ++j) {
+            if (_data.getCString()[i + j] != substring._data.getCString()[j]) {
+                break;
+            }
+
+            if (j == substring.size()-1) return i;
+        }
+    }
+
+    return -1;
+}
+
+int MyString::compare(const MyString &comparableString) const {
     return 0;
 }
 
