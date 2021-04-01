@@ -6,18 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/Users/anther/ProgrammingProjects/CLionProjects/univerProjects/MyString/MyString.cpp
-MyString.h
-/Users/anther/ProgrammingProjects/CLionProjects/univerProjects/MyString/MyString.h
-MyStringData.h
-/Users/anther/ProgrammingProjects/CLionProjects/univerProjects/MyString/MyStringData.h
-cassert
--
-cstdlib
--
-cstring
--
-
 /Users/anther/ProgrammingProjects/CLionProjects/univerProjects/MyString/MyString.h
 MyStringData.h
 /Users/anther/ProgrammingProjects/CLionProjects/univerProjects/MyString/MyStringData.h
@@ -25,4 +13,10 @@ MyStringData.h
 /Users/anther/ProgrammingProjects/CLionProjects/univerProjects/MyString/MyStringData.h
 iostream
 -
+
+/Users/anther/ProgrammingProjects/CLionProjects/univerProjects/MyString/main.cpp
+iostream
+-
+MyString.h
+/Users/anther/ProgrammingProjects/CLionProjects/univerProjects/MyString/MyString.h
 

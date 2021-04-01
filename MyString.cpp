@@ -121,7 +121,7 @@ unsigned int MyString::find(const MyString &substring, unsigned int pos) {
 
     for (int i = 0; i <= size() - substring.size(); ++i) {
         for (int j = 0; j < substring.size(); ++j) {
-            if (_data.getCString()[i + j] != substring._data.getCString()[j]) {
+            if (_data[i + j] != substring._data[j]) {
                 break;
             }
 
@@ -133,7 +133,14 @@ unsigned int MyString::find(const MyString &substring, unsigned int pos) {
 }
 
 int MyString::compare(const MyString &comparableString) const {
-    return 0;
+    size_t n = size() < comparableString.size() ? size() : comparableString.size();
+
+    for (int i = 0; i < n; ++i) {
+        if (_data[i] != comparableString[i])
+            return _data[i] - comparableString[i];
+    }
+
+    return size() > comparableString.size() ? 1 : -1;
 }
 
 

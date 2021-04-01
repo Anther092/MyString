@@ -11,8 +11,8 @@ void printMyString(const MyString &str) {
 int main() {
 
 
-    MyString str1("afor store apple");
-    MyString str2("apple");
+    MyString str1("abcd");
+    MyString str2("z");
 
 
 //    std::cout << "append:" << std::endl;
@@ -52,9 +52,13 @@ int main() {
 //    str1 = str1 + str2;
 //    printMyString(str1);
 //    std::cout << std::endl;
+//
+//    std::cout << "find:" << std::endl;
+//    std::cout << str1.find(str2) << std::endl;
+//    std::cout << std::endl;
 
-    std::cout << "find:" << std::endl;
-    std::cout << str1.find(str2) << std::endl;
+    std::cout << "compare:" << std::endl;
+    std::cout << str1.compare(str2) << std::endl;
     std::cout << std::endl;
 
 
