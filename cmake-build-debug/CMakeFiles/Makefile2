@@ -94,12 +94,12 @@ clean: CMakeFiles/MyString.dir/clean
 CMakeFiles/MyString.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyString.dir/build.make CMakeFiles/MyString.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyString.dir/build.make CMakeFiles/MyString.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/anther/ProgrammingProjects/CLionProjects/univerProjects/MyString/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4 "Built target MyString"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/anther/ProgrammingProjects/CLionProjects/univerProjects/MyString/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5 "Built target MyString"
 .PHONY : CMakeFiles/MyString.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/MyString.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/anther/ProgrammingProjects/CLionProjects/univerProjects/MyString/cmake-build-debug/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/anther/ProgrammingProjects/CLionProjects/univerProjects/MyString/cmake-build-debug/CMakeFiles 5
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/MyString.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/anther/ProgrammingProjects/CLionProjects/univerProjects/MyString/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/MyString.dir/rule

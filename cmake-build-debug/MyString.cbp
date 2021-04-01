@@ -82,6 +82,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/anther/ProgrammingProjects/CLionProjects/univerProjects/MyString/ExceptionMyStringAt.cpp">
+			<Option target="MyString"/>
+		</Unit>
+		<Unit filename="/Users/anther/ProgrammingProjects/CLionProjects/univerProjects/MyString/ExceptionMyStringAt.h">
+			<Option target="MyString"/>
+		</Unit>
 		<Unit filename="/Users/anther/ProgrammingProjects/CLionProjects/univerProjects/MyString/MyString.cpp">
 			<Option target="MyString"/>
 		</Unit>

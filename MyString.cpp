@@ -4,8 +4,6 @@
 
 #include "MyString.h"
 #include "MyStringData.h"
-
-#include <cassert>
 #include <cstdlib>
 #include <cstring>
 
@@ -52,12 +50,16 @@ void MyString::append(const MyString& appendedString) {
 }
 
 void MyString::insert(unsigned int pos, const MyString& insertedString) {
-    assert(pos <= size());
 
     MyStringData buf(_data.getCString(), size() + insertedString.size());
 
-    memcpy((void *) (buf.getCString() + pos), insertedString._data.getCString(), insertedString.size());
-    memcpy((void *) (buf.getCString() + pos + insertedString.size()), _data.getCString(), buf.getSize() - (pos + insertedString.size()));
+    if (size() == 0) {
+        _data = insertedString._data;
+        return;
+    }
+
+    memcpy(&buf[0] + pos, &insertedString._data[0], insertedString.size());
+    memcpy( &buf[0] + pos + insertedString.size(), &_data[0], buf.getSize() - (pos + insertedString.size()));
 
     _data = buf;
 }
@@ -67,12 +69,10 @@ unsigned int MyString::size() const {
 }
 
 const char& MyString::at(unsigned int idx) const {
-     assert(idx < size());
      return _data[idx];
 }
 
 char &MyString::at(unsigned int idx) {
-    assert(idx < size());
     return _data[idx];
 }
 
@@ -97,14 +97,12 @@ void MyString::clear() {
 }
 
 void MyString::erase(unsigned int pos, unsigned int count) {
-    assert(pos >= 0);
-    assert(pos < size());
 
     if (count > size() - pos)
         count = size() - pos;
 
     MyStringData buf(_data.getCString(), size() - count);
-    memcpy((void *) (buf.getCString() + pos), buf.getCString() + pos + count, size() - (count + pos));
+    memcpy(&buf[0] + pos, &buf[0] + pos + count, size() - (count + pos));
     _data = buf;
 }
 
@@ -119,7 +117,7 @@ MyString &MyString::operator+(const MyString &appendedString) {
 
 unsigned int MyString::find(const MyString &substring, unsigned int pos) {
 
-    for (int i = 0; i <= size() - substring.size(); ++i) {
+    for (int i = pos; i <= (int)size() - (int)substring.size(); ++i) {
         for (int j = 0; j < substring.size(); ++j) {
             if (_data[i + j] != substring._data[j]) {
                 break;

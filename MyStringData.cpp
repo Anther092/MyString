@@ -2,6 +2,7 @@
 // Created by Bogdan on 16/03/2021.
 //
 
+#include "ExceptionMyStringAt.h"
 #include "MyStringData.h"
 #include <cstring>
 
@@ -55,18 +56,30 @@ unsigned char MyStringData::getSize() const {
 }
 
 const char& MyStringData::operator[](size_t idx) const {
-    assert(idx < getSize());
+    if (idx >= getSize()) {
+        throw ExcepitonMyStringAt(getSize(), idx);
+    }
     return (_stringType == stringType::longString) ? _udata.l.data[idx] : _udata.s.data[idx];
 }
 
 char& MyStringData::operator[](size_t idx) {
-    assert(idx < getSize());
+    if (idx >= getSize()) {
+        throw ExcepitonMyStringAt(getSize(), idx);
+    }
     return (_stringType == stringType::longString) ? _udata.l.data[idx] : _udata.s.data[idx];
 }
 
-const char *MyStringData::getCString() const {
-    //add null terminant
-    return (_stringType == stringType::longString) ? _udata.l.data : _udata.s.data;
+const char* MyStringData::getCString() const {
+
+    if (_stringType == stringType::longString) {
+        char *cStr = new char[getSize() + 1];
+        const char *ptr = _udata.l.data;
+        memcpy(cStr, ptr, getSize());
+        cStr[getSize()] = '\0';
+        return cStr;
+    }
+
+    return _udata.s.data;
 }
 
 void MyStringData::unhook() {

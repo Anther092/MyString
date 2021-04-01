@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/MyString.dir/ExceptionMyStringAt.cpp.o"
   "CMakeFiles/MyString.dir/MyString.cpp.o"
   "CMakeFiles/MyString.dir/MyStringData.cpp.o"
   "CMakeFiles/MyString.dir/main.cpp.o"
