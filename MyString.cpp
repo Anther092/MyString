@@ -141,6 +141,24 @@ int MyString::compare(const MyString &comparableString) const {
     return size() > comparableString.size() ? 1 : -1;
 }
 
+bool MyString::operator==(const MyString& comparableString) const {
+    return this->compare(comparableString) == 0;
+}
+bool MyString::operator!=(const MyString& comparableString) const {
+    return !(*this == comparableString);
+}
+bool MyString::operator>(const MyString& comparableString) const {
+    return this->compare(comparableString) > 0;
+}
+bool MyString::operator<(const MyString& comparableString) const {
+    return this->compare(comparableString) < 0;
+}
+bool MyString::operator>=(const MyString& comparableString) const {
+    return (*this == comparableString) || (*this > comparableString);
+}
+bool MyString::operator<=(const MyString& comparableString) const {
+    return (*this == comparableString) || (*this < comparableString);
+}
 
 
 

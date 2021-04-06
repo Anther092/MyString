@@ -59,7 +59,6 @@ int main() {
 
     std::cout << "compare:" << std::endl;
     std::cout << myStr1.compare(myStr2) << std::endl;
-    std::cout << "'b' - 't' " << 'b' - 't' << std::endl;
     std::cout << std::endl;
 
     return 0;
